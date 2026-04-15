@@ -4,6 +4,8 @@ metadata:
   name: springboot-demo
   namespace: default
 spec:
+  imagePullSecrets:
+  - name: harbor-secret
   replicas: 2
   selector:
     matchLabels:
