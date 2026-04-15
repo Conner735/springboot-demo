@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "springboot-demo"
-        HARBOR_HOST = "192.168.31.139"
+        HARBOR_HOST = "harbor.local.com"
         HARBOR_PROJECT = "demo"
         IMAGE_TAG = "${BUILD_NUMBER}"
         IMAGE_NAME = "${HARBOR_HOST}/${HARBOR_PROJECT}/${APP_NAME}:${IMAGE_TAG}"
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     credentialsId: 'gitlab-token',
-                    url: 'http://gitlab.example.com/root/springboot-demo.git'
+                    url: 'https://github.com/Conner735/springboot-demo.git'
             }
         }
 
