@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-demo
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springboot-demo
+  template:
+    metadata:
+      labels:
+        app: springboot-demo
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: springboot-demo
+          image: REPLACE_IMAGE
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
