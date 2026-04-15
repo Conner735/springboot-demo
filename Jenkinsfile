@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'gitlab-token',
+                    credentialsId: 'github-token',
                     url: 'https://github.com/Conner735/springboot-demo.git'
             }
         }
